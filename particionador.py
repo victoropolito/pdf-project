@@ -34,7 +34,7 @@ def dividir_pdf(caminho_pdf, pasta_destino, contador=[1]):
             novo_pdf = fitz.open()
             for i in range(inicio, fim):
                 novo_pdf.insert_pdf(doc, from_page=i, to_page=i)
-            novo_pdf.save(caminho_parte, garbage=4, deflate=True)
+            novo_pdf.save(caminho_parte)
             time.sleep(0.5) 
             tamanho_parte = obter_tamanho_arquivo(caminho_parte)
             print(f'Tamanho: {tamanho_parte:.2f} KB')
@@ -51,9 +51,8 @@ def dividir_pdf(caminho_pdf, pasta_destino, contador=[1]):
             else:
                 contador[0] += 1
 
-# PDF path and destination folder
-caminho_pdf = "C:/Example/Example/Example/example.pdf"
-pasta_destino = os.path.abspath("C:/Example/Example/Example")
+caminho_pdf = "C:/Users/Victor/Downloads/PDFs/Youmans and Winn Neurological Surgery - 8th Edition-2022.pdf"
+pasta_destino = os.path.abspath("C:/Users/Victor/Downloads/PDFs/teste-arvore-dois")
 
 os.makedirs(pasta_destino, exist_ok=True)
 dividir_pdf(caminho_pdf, pasta_destino)

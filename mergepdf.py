@@ -16,7 +16,6 @@ def merge_pdfs(arquivos, arquivo_saida):
     pdf_final.save(arquivo_saida)
     print(f"PDF mesclado salvo em: {arquivo_saida}")
 
-# Interface para selecionar os arquivos PDF
 root = tk.Tk()
 root.withdraw()
 arquivos = filedialog.askopenfilenames(title="Selecione os PDFs para mesclar", filetypes=[("PDF files", "*.pdf")])
